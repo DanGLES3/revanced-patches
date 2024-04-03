@@ -52,10 +52,10 @@ abstract class AbstractOpusCodecsPatch(
                     targetIndex + 1, """
                         invoke-static {}, $descriptor
                         move-result v7
-                        if-eqz v7, :mp4a
+                        if-eqz v7, :opus
                         invoke-static {}, $targetReference
                         move-result-object v$targetRegister
-                        """, ExternalLabel("mp4a", getInstruction(targetIndex + 1))
+                        """, ExternalLabel("opus", getInstruction(targetIndex + 1))
                 )
             }
         } ?: throw CodecSelectorFingerprint.exception
